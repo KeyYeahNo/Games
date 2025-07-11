@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mastermind Drag & Drop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Mastermind</h1>
+    <div class="palette">
+        <div class="peg red" draggable="true" data-color="red"></div>
+        <div class="peg blue" draggable="true" data-color="blue"></div>
+        <div class="peg green" draggable="true" data-color="green"></div>
+        <div class="peg yellow" draggable="true" data-color="yellow"></div>
+        <div class="peg orange" draggable="true" data-color="orange"></div>
+        <div class="peg purple" draggable="true" data-color="purple"></div>
+    </div>
+
+    <div class="board">
+        <div id="history"></div>
+        <div class="guess-row" id="current-guess">
+            <div class="slot" data-index="0"></div>
+            <div class="slot" data-index="1"></div>
+            <div class="slot" data-index="2"></div>
+            <div class="slot" data-index="3"></div>
+            <button id="submit-guess">Check</button>
+            <span id="feedback"></span>
+        </div>
+    </div>
+
+    <div id="victory-overlay" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.7);z-index:1000;justify-content:center;align-items:center;flex-direction:column;color:white;font-size:2em;">
+        <div>🎉 You Win! 🎉</div>
+        <div id="victory-code" style="margin-top:20px;font-size:1em;"></div>
+        <button onclick="location.reload()" style="margin-top:30px;font-size:1em;">Play Again</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
